@@ -25,7 +25,7 @@ export default function App() {
         <Button title="Add New Todo" onPress={newTodoHandler}/>
       </View>
       <View>
-        <TodoList todos={todoList} />
+        <TodoList todos={todoList} setTodoList={setTodoList}/>
       </View>
       {dialogVisible && <Dialog visible={dialogVisible} closeHandler={closeDialogHandler} setTodoList={setTodoList}/> }
       <StatusBar style="auto" />

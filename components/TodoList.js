@@ -2,9 +2,9 @@ import { View, FlatList } from 'react-native'
 
 import TodoItem from './TodoItem'
 
-function TodoList({ todos }) {
+function TodoList({ todos, setTodoList }) {
   const renderItem = ({ item }) => {
-    return <TodoItem todo={item.text} />
+    return <TodoItem todo={item} todos={todos} setTodoList={setTodoList}/>
   }
 
   return (

@@ -1,11 +1,18 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, Pressable, StyleSheet } from 'react-native'
 
-function TodoItem({ todo }) {
+function TodoItem({ todo, setTodoList, todos }) {
+
+  const markDone = () => {
+    setTodoList(todos.filter(todoItem => todo.id !== todoItem.id))
+  }
+
   return (
     <>
-      <View style={styles.todoItem}>
-        <Text>{todo}</Text>
-      </View>
+      <Pressable onPress={markDone}>
+        <View style={styles.todoItem}>
+          <Text>{todo.text}</Text>
+        </View>
+      </Pressable>
     </>
   )
 }
