@@ -3,8 +3,15 @@ import { Modal, View, StyleSheet, Button } from 'react-native'
 
 import TodoInput from './TodoInput'
 
-function Dialog({ visible, closeHandler }) {
+function Dialog({ visible, closeHandler, setTodoList }) {
   const [todo, setTodo] = useState('')
+
+  const newTodoHandler = () => {
+    setTodoList(todoList => ([...todoList, {text: todo, id: Math.random().toString()}]))
+
+    //close dialog
+    closeHandler()
+  }
 
   return (
     <>
@@ -17,7 +24,7 @@ function Dialog({ visible, closeHandler }) {
                 <Button title='Cancel' onPress={closeHandler} />
               </View>
               <View style={styles.button}>
-                <Button title='Add'/>
+                <Button title='Add' onPress={newTodoHandler}/>
               </View>
             </View>
           </View>

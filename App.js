@@ -27,7 +27,7 @@ export default function App() {
       <View>
         <TodoList todos={todoList} />
       </View>
-      {dialogVisible && <Dialog visible={dialogVisible} closeHandler={closeDialogHandler}/> }
+      {dialogVisible && <Dialog visible={dialogVisible} closeHandler={closeDialogHandler} setTodoList={setTodoList}/> }
       <StatusBar style="auto" />
     </View>
   );
