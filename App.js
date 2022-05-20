@@ -4,6 +4,8 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 
 import Dialog from './components/Dialog';
 
+import TodoList from './components/TodoList';
+
 export default function App() {
   const [dialogVisible, setDialogVisible] = useState(false)
 
@@ -21,6 +23,9 @@ export default function App() {
     <View style={styles.container}>
       <View>
         <Button title="Add New Todo" onPress={newTodoHandler}/>
+      </View>
+      <View>
+        <TodoList todos={todoList} />
       </View>
       {dialogVisible && <Dialog visible={dialogVisible} closeHandler={closeDialogHandler}/> }
       <StatusBar style="auto" />

@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet } from 'react-native'
 
-function TodoItem() {
+function TodoItem({ todo }) {
   return (
     <>
       <View style={styles.todoItem}>
-        <Text>Item</Text>
+        <Text>{todo}</Text>
       </View>
     </>
   )
