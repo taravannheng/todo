@@ -11,10 +11,14 @@ export default function App() {
     setDialogVisible(true)
   }
 
+  const closeDialogHandler = () => {
+    setDialogVisible(false)
+  }
+
   return (
     <View style={styles.container}>
       <Button title="Add New Todo" onPress={newTodoHandler}/>
-      {dialogVisible && <Dialog visible={dialogVisible} />}
+      {dialogVisible && <Dialog visible={dialogVisible} closeHandler={closeDialogHandler}/>}
       <StatusBar style="auto" />
     </View>
   );
