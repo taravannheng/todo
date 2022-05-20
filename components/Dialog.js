@@ -3,13 +3,15 @@ import { Modal, View, StyleSheet, Button } from 'react-native'
 
 import TodoInput from './TodoInput'
 
-function Dialog({ visible, closeHandler, todoHandler }) {
+function Dialog({ visible, closeHandler }) {
+  const [todo, setTodo] = useState('')
+
   return (
     <>
       <View>
         <Modal animationType='slide' visible={visible}>
           <View style={styles.dialog}>
-            <TodoInput />
+            <TodoInput todo={todo} setTodo={setTodo}/>
             <View style={styles.buttonContainer}>
               <View style={styles.button}>
                 <Button title='Cancel' onPress={closeHandler} />

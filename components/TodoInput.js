@@ -1,9 +1,7 @@
 import { useState } from 'react'
 import { View, TextInput, StyleSheet } from 'react-native'
 
-function TodoInput() {
-  const [todo, setTodo] = useState('')
-
+function TodoInput({ todo, setTodo }) {
   const handleTextChange = (val) => {
     setTodo(val)
   }
