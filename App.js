@@ -7,6 +7,8 @@ import Dialog from './components/Dialog';
 export default function App() {
   const [dialogVisible, setDialogVisible] = useState(false)
 
+  const [todoList, setTodoList] = useState([])
+
   const newTodoHandler = () => {
     setDialogVisible(true)
   }
@@ -18,7 +20,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Button title="Add New Todo" onPress={newTodoHandler}/>
-      {dialogVisible && <Dialog visible={dialogVisible} closeHandler={closeDialogHandler}/>}
+      {dialogVisible && <Dialog visible={dialogVisible} closeHandler={closeDialogHandler}/> }
       <StatusBar style="auto" />
     </View>
   );
