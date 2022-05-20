@@ -19,7 +19,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Button title="Add New Todo" onPress={newTodoHandler}/>
+      <View>
+        <Button title="Add New Todo" onPress={newTodoHandler}/>
+      </View>
       {dialogVisible && <Dialog visible={dialogVisible} closeHandler={closeDialogHandler}/> }
       <StatusBar style="auto" />
     </View>
@@ -30,7 +32,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+
     backgroundColor: '#fadb01',
   },
 });
