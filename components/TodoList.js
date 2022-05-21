@@ -1,4 +1,4 @@
-import { View, FlatList } from 'react-native'
+import { View, FlatList, StyleSheet } from 'react-native'
 
 import TodoItem from './TodoItem'
 
@@ -9,7 +9,7 @@ function TodoList({ todos, markDone }) {
 
   return (
     <>
-      <View>
+      <View style={styles.todoList}>
         <FlatList
           data={todos}
           renderItem={renderItem}
@@ -21,3 +21,9 @@ function TodoList({ todos, markDone }) {
 }
 
 export default TodoList
+
+const styles = StyleSheet.create({
+  todoList: {
+    height: 400,
+  }
+})

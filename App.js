@@ -25,7 +25,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <View>
+      <View style={styles.addButton}>
         <Button title="Add New Todo" onPress={newTodoHandler}/>
       </View>
       <View>
@@ -44,4 +44,7 @@ const styles = StyleSheet.create({
 
     backgroundColor: '#fadb01',
   },
+  addButton: {
+    marginBottom: 24,
+  }
 });
