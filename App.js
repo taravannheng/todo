@@ -20,7 +20,7 @@ export default function App() {
   }
 
   const markDone = (id) => {
-    setTodoList(todos.filter(todo => todo.id !== id))
+    setTodoList(todoList.filter(todo => todo.id !== id))
   }
 
   return (
