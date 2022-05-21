@@ -19,13 +19,17 @@ export default function App() {
     setDialogVisible(false)
   }
 
+  const markDone = (id) => {
+    setTodoList(todos.filter(todo => todo.id !== id))
+  }
+
   return (
     <View style={styles.container}>
       <View>
         <Button title="Add New Todo" onPress={newTodoHandler}/>
       </View>
       <View>
-        <TodoList todos={todoList} setTodoList={setTodoList}/>
+        <TodoList todos={todoList} setTodoList={setTodoList} markDone={markDone}/>
       </View>
       {dialogVisible && <Dialog visible={dialogVisible} closeHandler={closeDialogHandler} setTodoList={setTodoList}/> }
       <StatusBar style="auto" />
